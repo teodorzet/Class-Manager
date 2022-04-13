@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/classEdit.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="profHomePage.html" class="active">My Classes</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png"
+            width="130" height="65">
+
+    </div>
+
+    <div class="newClass" id="myClasses">
+
+        <div class="classRect">
+            <div class="topOfRect">
+                <p><b>Edit current class informations</b></p>
+                <div class="classSeparator"></div>
+            </div>
+            <div class="bottomOfRect">
+                <form action="profHomePage.html" id="updateClass">
+                    <p id="requestMessage"></p>
+                    <p>
+                        <label for="className"><b>Class name:</b></label>
+                        <input type="text" name="className" id="className" required placeholder="Class title">
+                    </p>
+                    <p>
+                        <label for="classDate"><b>Select the day of the class:</b></label>
+                        <select name="classDate" id="classDate">
+                            <option value="Monday">Monday</option>
+                            <option value="Tuesday">Tuesday</option>
+                            <option value="Wednesday">Wednesday</option>
+                            <option value="Thursday">Thursday</option>
+                            <option value="Friday">Friday</option>
+                            <option value="Saturday">Saturday</option>
+                            <option value="Sunday">Sunday</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="classHourStart"><b>Select the hour when the class starts:</b></label>
+                        <input type="time" name="classHourStart" id="classHourStart" min="00:00" max="23:59" required>
+                    </p>
+                    <p>
+                        <label for="classHourEnd"><b>Select the hour when the class ends:</b></label>
+                        <input type="time" name="classHourEnd" id="classHourEnd" min="00:00" max="23:59" required>
+                    </p>
+                    <p>
+                        <label for="classLink"><b>Class link:</b></label>
+                        <input type="text" name="classLink" id="classLink" placeholder="Link to your class website">
+                    </p>
+                    <p>
+                        <label for="classComponents"><b>Number of components:</b></label>
+                        <select name="classComponents" id="classComponents">
+                            <option value="1">1</option>
+                            <option value="2">2</option>
+                            <option value="3">3</option>
+                            <option value="4">4</option>
+                            <option value="5">5</option>
+                        </select>
+                    </p>
+                    <p>
+                        <label for="classFormula"><b>Final grade formula:</b></label>
+                        <input type="text" name="classFormula" id="classFormula" placeholder="Ex: (a+b+c)/3">
+                        <span class="formulaTip" id="formulaTip">Formula should countain
+                            letters from a-e
+                            representing
+                            the components in
+                            order,
+                            and mathematical symbols!</span>
+                    </p>
+                    <p>
+                        <label for="classOtherPlatforms"><b>Other platforms:</b></label>
+                        <input type="text" name="classOtherPlatforms" id="classOtherPlatforms" placeholder="Ex: Zoom">
+                    </p>
+                    <button type="submit" class="submitClass">
+                        Modify class
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/loadClass.js"></script>
+</body>
+
+</html>

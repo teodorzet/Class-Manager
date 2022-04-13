@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/addAssignment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="../html/profHomePage.html" class="active">My Classes</a>
+        <a href="../html/settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png"
+            width="130" height="65">
+
+    </div>
+
+    <div class="header" id="myHeader">
+        <!-- upper border -->
+        <b>Web Technologies</b>
+    </div>
+
+    <div class="submitArea">
+        <form action="http://localhost:8888/api/create-assignment" method="POST" id="newAssignment">
+            <p id="requestMessage"></p>
+            <p>
+                <b>Add new assignment</b>
+            </p>
+            <textarea id="assignmentName" name="assignmentName" rows="1" cols="60"
+                placeholder="Enter the assignment title..." required></textarea>
+            <label for="assignmentDeadlineDate"><b>Select the date of the deadline:</b></label>
+            <input type="date" id="assignmentDeadlineDate" name="assignmentDeadlineDate" required>
+            <br>
+            <br>
+            <label for="assignmentDeadlineHour"><b>Select the hour of the deadline:</b></label>
+            <input type="time" name="assignmentDeadlineHour" id="assignmentDeadlineHour" min="00:00" max="23:59"
+                required>
+            <br>
+            <br>
+            <textarea id="assignmentDescription" name="assignmentDescription" rows="8" cols="60"
+                placeholder="Enter the assignment description..." required></textarea>
+            <label for="files">Upload your files:</label>
+            <input type="file" id="fileInput" name="files">
+            <br>
+            <br>
+            <button type="submit" class="assignmentButton">Add</button>
+            <!-- onclick="javascript:eraseText();" -->
+        </form>
+    </div>
+
+    <div class="endOfPage"></div>
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/createNewAssignment.js"></script>
+</body>
+
+</html>

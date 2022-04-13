@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/assignmentsPage.css" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="homePage.html">My Classes</a>
+        <a href="assignmentsPage.html" class="active">Assignments</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png" width="130" height="65">
+
+    </div>
+
+    <div class="header" id="myHeader">
+        <div class="dropDown" id="dropDown">
+            <select onchange="location = this.value" name="assignments" id="assignments">
+                    <option value="./assignmentsPage.html">All Assignments History</option>
+                    <option value="./toDoAssignments.html">To Do Assignments</option>
+                    <option  selected="selected"  value="./doneAssignments.html">Turned In Assignments</option>
+            </select>
+        </div>
+
+    </div>
+
+    <div class="assignments" id="myAssignments"> </div>
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/doneAssignments.js"></script>
+
+</body>
+
+</html>

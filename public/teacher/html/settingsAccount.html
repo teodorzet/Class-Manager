@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Account Settings </title>
+    <link rel="stylesheet" href="../css/settingsAccount.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+
+    <div class="topnav" id="myTopnav">
+        <a href="../html/profHomePage.html">My Classes</a>
+        <a href="settingsAccount.html" class="active">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png" width="130" height="65">
+    </div>
+
+    <form action="http://localhost:8888/api/update" method="POST" autocomplete="on" id="updateForm">
+        <div class="settings_container">
+
+            <div class="userNames">
+                <h1>
+                    Your Account
+                </h1>
+                <p class="requestMessage" id="requestMessage"></p>
+
+                <label for="firstName"> <b> First name</b>
+                    <input type="text" placeholder="first name" name="firstName" id="firstName">
+                </label>
+
+                <label for="lastName"> <b>Last name</b>
+                    <input type="text" placeholder="last name" name="lastName" id="lastName">
+                </label>
+
+            </div>
+
+            <label for="username"> <b>Username</b> </label>
+            <input type="text" placeholder="username" name="username" id="username">
+
+            <label for="newPassword">    <b>New password</b> </label>
+            <input type="password" placeholder="new password" name="newPassword" id="password">
+
+
+            <label for="confirmPassword"> <b>Confirm password</b> </label>
+            <input type="password" placeholder="confirm password" name="newPasswordConfirm" id="confirmPassword">
+
+            <label for="email"> <b>Email</b> </label>
+
+            <input type="text" placeholder="email" name="mail" id="email">
+
+            <button type="submit" class="updateButton" onclick="checkPassword()">Update Account</button>
+        </div>
+
+    </form>
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/update.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Class Manager Sign Up </title>
+    <link rel="stylesheet" href="./css/registerForm.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+    <!-- onsubmit="registerUser()" -->
+    <form action="http://localhost:8888/api/register" method="POST" autocomplete="off" id="userForm">
+        <div class="register_container">
+            <h2>
+                New account
+            </h2>
+            <div class="invalidData" id="invalidData">
+                error
+            </div>
+
+            <label for="username">
+                <b> Username</b>
+            </label>
+            <input type="text" placeholder="Username" name="username" id="username" required>
+
+            <label for="password">
+                <b>Password</b>
+            </label>
+            <input type="password" placeholder="Enter Password" name="password" id="password" required>
+
+            <label for="password">
+                <b>Confirm password</b>
+            </label>
+            <input type="password" placeholder="Confirm Password" name="password" id="confirmPassword" required>
+
+
+            <label for="name">
+                <b>Name</b>
+            </label>
+            <input type="text" placeholder="Enter name" name="name" id="name" required>
+
+
+            <label for="surname">
+                <b>Surname</b>
+            </label>
+            <input type="text" placeholder="Enter surname" name="surname" id="surname" required>
+
+            <label for="email">
+                <b>Email</b>
+            </label>
+            <input type="email" placeholder="Enter Email" name="email" id="email" required>
+
+            <p>Choose your account type:</p>
+
+            <label class="radio-inline">
+                <input type="radio" name="account" value="student" id="student" checked> Student
+            </label>
+
+            <label class="radio-inline">
+                <input type="radio" name="account" value="profesor" id="profesor"> Profesor
+            </label>
+
+            <button type="submit" class="registerButton" onclick="checkPasswordRegister()">Register</button>
+            <!-- onclick="checkPasswordRegister()" -->
+        </div>
+
+    </form>
+
+    <script src="common/js/functions.js"></script>
+    <script src="common/js/register.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,133 @@
+label {
+    display: block;
+    padding: 10px;
+    padding-left: 8%;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-size: 1000px 1000px;
+    background-repeat: no-repeat;
+    background-color: rgb(208, 221, 231);
+    background-image: url("https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/education_f8ru.svg");
+}
+
+p {
+    margin-left: 30px;
+}
+
+.register_container {
+    position: relative;
+    width: fit-content;
+    height: fit-content;
+    padding: 0px 0px 180px;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 15px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    background-color: rgb(255, 255, 255);
+    padding-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    bottom: 10px;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    background-color: rgb(210, 241, 239);
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    width: 400px;
+    height: 25px;
+    padding: 15px;
+    left: 25px;
+    display: block;
+    margin: 0 auto;
+    margin-left: 30px;
+    margin-right: 31px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(226, 226, 226, 0.589);
+    font-family: 'Trebuchet MS', sans-serif;
+    outline: none;
+}
+
+input[type=radio] {
+    display: inline-block;
+}
+
+.registerButton {
+    outline: none;
+    background-color: #6aca52;
+    color: white;
+    padding: 15px 20px;
+    margin: 8px 0;
+    cursor: pointer;
+    width: 87%;
+    opacity: 0.9;
+    border: none;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    border-radius: 10px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.registerButton:hover {
+    background-color: #a6e795;
+}
+
+h2 {
+    padding: 20px;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+@media only screen and (max-width: 650px) {
+    .registerButton {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+    input[type=text],
+    input[type=password],
+    input[type=email] {
+        width: 75%;
+        margin: 0 auto;
+        display: block;
+        border: none;
+    }
+    .register_container {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 80%;
+        text-size-adjust: 70%;
+    }
+}
+
+@media only screen and (min-width: 600px) {
+    .registerButton {
+        width: 80%;
+        display: flex;
+        justify-content: center;
+    }
+}
+
+.invalidData {
+    display:none;
+}
+
+.invalidData.display {
+    display: block;
+    color: red;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    font-family: 'Trebuchet MS', sans-serif;
+}

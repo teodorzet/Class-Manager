@@ -1,0 +1,10 @@
+"id","title","day_of_occurence","start_class","end_class","enter_code","course_site_link","no_components","formula","other_platforms","begin_class"
+1,"Tehnologii Veb","Monday","20:10:00","23:10:00",NULL,"da",3,"(a+b+c)/3","zoom",NULL
+4,"876876","Monday","08:07:00","08:59:00","wsnq5","876",3,"(a+b)/2","876","2021-06-07 17:01:19.618977+00"
+3,"Tehnologii Veb","Monday","00:00:00","20:00:00","rt3dl","link",3,"(a+b+c)/3","zoom","2021-06-07 19:19:01.421+00"
+5,"Web Technologies","Wednesday","10:00:00","12:00:00",NULL,"https://profs.info.uaic.ro/~busaco/teach/courses/web/",3,"a*0.2+b*0.8+c*0.1","https://discord.gg/7Zhg4QaN5R",NULL
+6,"Genetic Algorithms","Thursday","12:00:00","14:00:00",NULL,"https://profs.info.uaic.ro/~eugennc/teaching/ga/",5,"[(0.9 *a + 0.1 *b) + (0.8 * c + 0.2 *d) + e] / 3","Cisco Webex Meetings",NULL
+8,"Advanced Programming","Monday","18:00:00","20:00:00",NULL,"https://profs.info.uaic.ro/~acf/java/",2,"(a+b)/2","https://discord.gg/p8UeFGg9CJ",NULL
+11,"Software engineering","Friday","10:00:00","12:00:00",NULL,"https://profs.info.uaic.ro/~adiftene/Scoala/2021/IP/index.html",3,"(a+b+c)/3","https://discord.gg/M3EFxJq4nh",NULL
+9,"Computer Networks","Friday","14:00:00","16:00:00","320lk","https://profs.info.uaic.ro/~computernetworks/noutati.php",2,"a*0.2+b*0.8","Discord server","2021-06-07 19:41:54.726296+00"
+10,"OOP","Tuesday","08:00:00","10:00:00","t2vbi","no link available at the moment",2,"(a+b)/2","Discord","2021-06-07 20:20:18.485088+00"

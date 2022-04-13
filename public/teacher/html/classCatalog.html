@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/classCatalog.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="profHomePage.html" class="active">My Classes</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png"
+            width="130" height="65">
+
+    </div>
+
+    <div class="header" id="myHeader">
+        <!-- upper border -->
+        <b>Web Technologies</b>
+    </div>
+
+
+    <div class="generalInfo" id="general">
+
+        <p class="predefined"><b>Class catalog</b></p>
+
+        <form action="profClass.html">
+
+
+            <table class="catalog" id="catalog">
+            </table>
+
+            <button onclick="saveCatalog()" type="submit" class="submitNewsButton">
+                Save catalog
+            </button>
+            <button onclick="exportCSV()" type="button" class="submitNewsButton">
+                Export as CSV
+            </button>
+            <button onclick="exportHTML()" type="button" class="submitNewsButton">
+                Export as HTML
+            </button>
+            <button onclick="exportPDF()" value="Export" type="button" class="submitNewsButton">
+                Export as PDF
+            </button>
+        </form>
+
+
+    </div>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf/1.5.3/jspdf.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jspdf-autotable/3.5.6/jspdf.plugin.autotable.min.js"></script>
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/catalog.js"></script>
+
+</body>
+
+</html>

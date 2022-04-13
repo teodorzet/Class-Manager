@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title> Class Manager Welcome Page</title>
+    <link rel="stylesheet" href="common/css/loginForm.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+</head>
+
+<body>
+
+    <form action="http://localhost:8888/api/auth" method="POST" id="authForm">
+        <div class="login_container">
+            <h1>
+                Login
+            </h1>
+            <div class="invalidData" id="invalidData">
+                error
+            </div>
+
+            <div class="fields">
+                <label for="username">
+                    <b> Username</b>
+                </label>
+                <input type="text" placeholder="Enter Username/Email" name="username" id="username" required>
+
+                <label for="password">
+                    <b>Password</b>
+
+                </label>
+                <input type="password" placeholder="Enter Password" name="password" id="password" required>
+            </div>
+
+            <button type="submit" class="loginButton">Log in</button>
+
+            <div class="unregistered_container">
+                <p>No account? <a href="http://localhost:8888/registerForm.html">Register&rarr;</a></p>
+            </div>
+        </div>
+    </form>
+
+    <div class="references">
+        <a href="./common/html/userGuide.html">User-guide</a>
+        <a href="./common/html/tehnicalRaport.html">Tehnical-Raport</a>
+    </div>
+
+    <script src="common/js/functions.js"></script>
+    <script type="module" src="common/js/authenticate.js"></script>
+
+</body>
+
+</html>

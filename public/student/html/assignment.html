@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/assignment.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="homePage.html">My Classes</a>
+        <a href="assignmentsPage.html" class="active">Assignments</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="javascript:myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png"
+            width="130" height="65">
+
+
+    </div>
+
+    <div class="assignmentInfo" id="assignmentInfo">
+
+        <div class="header" id="myHeader">
+            <b id="assignmentTitle"> </b>
+        </div>
+        <div class="general" id="general">
+            <p class="predefined">Author: <span class="customInfo" id="teacher"></span></p>
+
+            <p class="predefined">Posted at: <span class="customInfo" id="postedAt"></span></p>
+
+            <p class="predefined">Deadline: <span class="customInfo" id="deadline"></span></p>
+
+        </div>
+        <div class="extra">
+            <p class="predefined "> Other details: <span class="customInfo" id="assignmentBody"></span></p>
+        </div>
+
+        <!-- <button class="downloadButton"><i class="fa fa-download"></i> Attachments</button> -->
+
+    </div>
+    <div class="submitArea">
+        <p id="requestMessage"></p>
+        <form action="/api/upload" id="assignmentForm">
+            <textarea id="assignmentText" name="assignmentText" rows="8" cols="60"
+                placeholder="Submit your assignment here..."></textarea>
+            <br>
+            <br>
+            <label for="files">Upload your files:</label>
+            <input type="file" id="fileInput" class="files">
+            <br>
+            <br>
+            <button type="submit" class="assignmentButton">Submit</button>
+        </form>
+    </div>
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script type="module" src="../../common/js/assignment.js"></script>
+
+</body>
+
+</html>

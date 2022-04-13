@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/course.css" />
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="homePage.html" class="active">My Classes</a>
+        <a href="assignmentsPage.html">Assignments</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png" width="130" height="65">
+    </div>
+
+    <div class="header" id="myHeader"> <b id="courseTitle"> </b> </div>
+
+
+    <div class="generalInfo" id="general">
+        <p class="predefined">Teacher: <span class="customInfo" id="teacher"></span></p>
+        <p class="predefined">Teacher's site:<span class="customInfo" id="teacherSite"></span></p>
+        <p class="predefined">Other platforms: <span class="customInfo" id="platforms"></span></p>
+        <p class="predefined">Schedule: <span class="customInfo" id="schedule"></p>
+            <p class="requestMessage" id="requestMessage"></p>
+        <p class="predefined">Grades: <span class="customInfo" id="grades"></span></p>
+    </div>
+
+    <div class="news" id="newPost"> </div>
+
+    <div class="assignments" id="myAssignments"></div>
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/course.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/news.js"></script>
+
+</body>
+
+</html>

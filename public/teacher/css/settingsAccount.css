@@ -1,0 +1,211 @@
+.topnav {
+    background-color: #0a1840;
+    overflow: hidden;
+}
+
+.logo {
+    padding-bottom: 0;
+    text-align: center;
+    padding: 0px 20px;
+    float: left;
+}
+
+.topnav a {
+    display: inline-block;
+    color: whitesmoke;
+    text-align: center;
+    padding: 23px 24px;
+    text-decoration: none;
+    font-size: 18px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.topnav a:hover {
+    background-color: whitesmoke;
+    color: rgba(49, 49, 49, 0.829);
+}
+
+.topnav a.active {
+    background-color: #5b9aec;
+    color: whitesmoke;
+}
+
+.topnav .icon {
+    display: none;
+}
+
+.settings_container {
+    top: 3px;
+    position: relative;
+    margin-left: auto;
+    margin-right: auto;
+    width: fit-content;
+    height: fit-content;
+    padding-bottom: 20px;
+    margin-right: auto;
+    margin-left: auto;
+    margin-bottom: 2%;
+    box-sizing: border-box;
+    box-shadow: 0px 5px 30px rgba(0, 0, 0, 0.35);
+    border-radius: 10px;
+    background-color: white;
+    padding-left: 20px;
+    padding-right: 10px;
+}
+
+.settings_container>label {
+    display: block;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+h1 {
+    padding: 10px;
+    text-align: center;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position-x: center;
+    background-position-y: center;
+    background-image: url("https://42f2671d685f51e10fc6-b9fcecea3e50b3b59bdc28dead054ebc.ssl.cf5.rackcdn.com/illustrations/features_overview_jg7a.svg");
+}
+
+.settings_container>input {
+    display: block;
+    width: 375px;
+    border: none;
+}
+
+.userNames>label {
+    font-family: 'Trebuchet MS', sans-serif;
+    float: left;
+    width: 210px;
+}
+
+.userNames>label>input {
+    width: 75%;
+}
+
+.userNames {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+.updateButton {
+    outline: none;
+    display: block;
+    text-align: center;
+    margin-left: auto;
+    margin-right: auto;
+    cursor: pointer;
+    border-radius: 10px;
+    opacity: 0.9;
+    border: none;
+    background-color: #6aca52;
+    color: white;
+    padding: 15px 20px;
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+.updateButton:hover {
+    background-color: #a6e795;
+}
+
+input[type=text],
+input[type=password],
+input[type=email] {
+    height: 10%;
+    padding: 15px;
+    margin: 5px 0 22px 0;
+    display: block;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(226, 226, 226, 0.589);
+    font-family: 'Trebuchet MS', sans-serif;
+    outline: none;
+}
+
+input[type="text"]:focus,
+input[type="password"]:focus,
+input[type="email"]:focus {
+    background-color: rgb(210, 241, 239);
+}
+
+@media only screen and (max-width: 600px) {
+    .settings_container {
+        width: fit-content;
+        margin-right: auto;
+        margin-left: auto;
+    }
+    .settings_container>label {
+        width: 80%;
+        display: inline-block;
+    }
+    .userNames {
+        display: flex;
+        flex-direction: column;
+    }
+    .userNames>label>input {
+        width: 85%;
+    }
+    .h1 {
+        padding-right: 20px;
+    }
+    .registerButton {
+        display: flex;
+        justify-content: center;
+    }
+    .settings_container>input {
+        width: fit-content;
+    }
+    input[type=text],
+    input[type=password],
+    input[type=email] {
+        width: 83%;
+        padding: 15px;
+        margin: 5px 0 22px 0;
+        display: block;
+        border: none;
+        background: #f1f1f1;
+    }
+    .register_container {
+        position: relative;
+        margin-left: auto;
+        margin-right: auto;
+        width: 50%;
+        text-size-adjust: 70%;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav a {
+        display: none;
+    }
+    .topnav a.icon {
+        float: right;
+        display: block;
+    }
+}
+
+@media screen and (max-width: 600px) {
+    .topnav.responsive {
+        position: relative;
+    }
+    .topnav.responsive .icon {
+        position: absolute;
+        right: 0;
+        top: 0;
+    }
+    .topnav.responsive a {
+        float: none;
+        display: block;
+        text-align: left;
+    }
+    .topnav.responsive .logo {
+        display: none;
+    }
+}

@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+
+<html lang="en">
+
+<head>
+    <title>Class Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="../css/userguide.css">
+</head>
+
+<body>
+    <header>
+        <b>Tehnical Raport - Class Manager</b>
+    </header>
+
+
+    <section id="introduction" role="doc-introduction">
+        <h1>Background of the document</h1>
+        <h2>Summary</h2>
+        <p>
+            This document addresses a technical frame of reference concerning the development progress of the Class
+            Manager project
+            web site. Main topics referenced in this report include modeling of the application emphasizing the server
+            side, database
+            and clients request handling.
+        </p>
+        <h2>Scope and Objectives</h2>
+        <p>
+            The main goal was for the project web site to act as the main communication tool between teachers and their
+            students. For
+            this reason, the site has been designed with the following in mind:
+        <ul>
+            <li>Be simple and easy to use</li>
+            <li>As informative as possible for both parties involved</li>
+        </ul>
+        </p>
+        <h2>Project’s requirements</h2>
+        <p>
+            Creating a utility for the management of students. The web solution provides:
+        <ul>
+            <li>Students will have the opportunity to upload some documents that must be graded by the teacher and to
+                see
+                the grades
+                proposed by him.</li>
+            <li>Teachers can accept students in a certain group or they can refuse it, they can put notes
+                associated with various
+                topics or for listening.</li>
+            <li>Teachers can generate a code that will be used to make the presence (code that will expire after a
+                predetermined period of
+                10 minutes).</li>
+            <li>Teachers can put a (predetermined) number of grades (same for all students, maximum 5) and to use a
+                mathematical formula
+                that uses basic operators (minimum: +, -, *, /, round, floor, others) to calculate a final grade.</li>
+            <li>Teachers will have the opportunity to generate a catalog that can be exported in any of the CSV, HTML or
+                PDF formats.</li>
+        </ul>
+        </p>
+    </section>
+
+    <section id="designAndImplementation" property="schema:description">
+        <h1>Design and Implementation Constraints</h1>
+        <h2>Application architecture</h2>
+        <p>
+            The architecture is inspired by the MVC (Model-View-Controller) model. MVC is an architectural model used in
+            software
+            engineering. The success of the model is due isolating the business logic from the resulting user
+            interface, considering
+            an application where the visual appearance and/or the lower levels of the rules of businesses are easier to
+            modify
+            without affecting other levels.
+        </p>
+        <p>
+            Furthermore from the application design point of view, the REST (Representational state transfer) API was
+            integrated.
+            The motivation behind it is that API works as a mediator between the users or clients and the resources or
+            web
+            services
+            they want to get. It’s also a way for an organization to share resources and information while maintaining
+            security,
+            control, and authentication, determining who gets access to what.
+        </p>
+        <h2>Server</h2>
+        <p>
+            The server side of the application provides a simple static file server built with pure Node.js, which is
+            also
+            responsible with handling dynamic requests from clients. The policy of the server consists of verifying the
+            received
+            URL from the client’s request.
+        </p>
+        <p>
+            In order to process a client’s dynamic request, the URL must meet the required standard, by starting
+            with ”/api”.
+            Before sending the request further to the controller, the server certifies if there is an available valid
+            cookie
+            associated with the client.
+        </p>
+        <p>
+            The other part of the server deals with loading folder content as file server.The logic is to look for the
+            extension of
+            the file being requested and see if it matches with one of the specified MIME types. Lastly, we respond to
+            the client with the file information by reading the file from the system. If the URL does not specify a
+            file,
+            the client is
+            redirected to the web site’s landing page.
+        </p>
+        <h2>Routing</h2>
+        <p>
+            Any request made by the client which is not static is sent to the router of the application. Once the
+            request
+            is received
+            from the server side it is further delegated to the router for managing. Once it gets to the routing phase,
+            the HTTP
+            request method is checked and the router parses the URL to facilitate the ease of handling the parameters.
+            Each dynamic
+            route is associated with a controller method responsible of handling the request appropriately.
+        </p>
+        <h2>Database</h2>
+        <p>
+            For the database management of the web site application, a relational database was used, backed by
+            PostgreSQL.
+            The database
+            consist of 9 tables :
+            <br>
+            <img class="databaseDiagram" alt="databaseDiagram" src="../others/ClaMa_DB.png">
+        <ul>
+            <li><b>Users</b> : encapsulates information about all clients that own an account on the web site. Each user
+                can
+                authenticate into
+                their account by email or username, both unique for any user, along with the password. Other
+                detailsretained about the
+                user are: first name, last name and the user’s type(studentor teacher)</li>
+            <li><b>Classes</b>: encapsulates information about any teacher’s classes such as the title of the class,
+                schedule,
+                links to their
+                personal site or to other platforms</li>
+            <li><b>Userclasses</b> : representing the junction between users and the classes, more explicitly which
+                classes are
+                attended by
+                student and which classes are owned by teachers</li>
+            <li><b>Assignments</b>: encapsulates informations about assignments given by teachers such as who posted the
+                assignment,
+                the creation date
+                and when it’s due along with other useful information entered by the author (files, details regarding
+                the
+                assignment)</li>
+            <li><b>Studentsassignments</b>: detains assignments turned in by students, includinga message and/or files
+            </li>
+            <li><b>Usersattendance</b> : owns data regarding students that need to validate their presence in class
+                using the
+                given code by the
+                teacher. The purpose of the table is to retain the student’s identity along with the timestamp of the
+                moment when they
+                tried to validate their presence</li>
+            <li><b>Catalog</b>: encapsulates information about each class’s students such as number of presences, and
+                their
+                grade assigned by
+                the teacher’s class</li>
+            <li><b>Classesrequests</b>: contains students request to sign up to specific classes</li>
+            <li><b>News</b>: encapsulates informations about any teacher’s posts from their classes that are addressed
+                to their
+                students,
+                containing files or other useful information</li>
+        </ul>
+        </p>
+    </section>
+
+    <section id="clientInteraction" property="schema:description">
+        <h1>Client interaction</h1>
+        <p>
+            The client-server communication occurs via RESTful API services. When a client request is made, it transfers
+            a
+            representation of the state of the resource to the endpoint. This information, or representation, is
+            delivered
+            in the JSON(Javascript Object Notation) format via HTTP.
+        </p>
+        <p>
+            Each client is uniquely identified with a cookie which is generated at the authentication phase and sent
+            back
+            to the
+            client as response. The cookie is used as an identifier, used by the server to properly manage its clients.
+            The
+            cookie encompasses a json web token which holds the client’s identity by using their database id along with
+            the type of
+            the account they own in order to manage their requests accordingly. The cookie is being sent back and forth
+            during
+            the interaction by the client’s requests header (which makes it http secure) and is available for a day or
+            until logout
+            action is performed, when the cookie is destroyed.
+        </p>
+        <p>
+            The client-server requests can be consulted at the following documentation
+            <a href=https://documenter.getpostman.com/view/15247691/TzY69uMq> link</a>
+            .
+        </p>
+    </section>
+
+    <section role="doc-bibliography" id="bibliography">
+        <h4>Bibliography</h4>
+        <a href=https://stackoverflow.com/questions/16333790/node-js-quick-file-server-static-files-over-http/16333915>
+            https://stackoverflow.com/questions/16333790/node-js-quick-file-server-static-files-over-http/16333915
+        </a>
+        <a href=https://developer.mozilla.org/en-US/docs/Learn/Server-side/Nodeserverwithoutframework>
+            https://developer.mozilla.org/en-US/docs/Learn/Server-side/Nodeserverwithoutframework
+        </a>
+        <a href=https://nodejs.org/en/knowledge/HTTP/clients/how−to−access−query−string−parameters />
+        https://nodejs.org/en/knowledge/HTTP/clients/how−to−access−query−string−parameters/
+        </a>
+        <br>
+        <br>
+    </section>
+
+
+
+</body>
+
+</html>

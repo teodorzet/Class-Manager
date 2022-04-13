@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/homePage.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="#myclasses" class="active">My Classes</a>
+        <a href="assignmentsPage.html">Assignments</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png" width="130" height="65">
+    </div>
+
+    <div class="whiteBack">
+        <p class="joinBar">
+            <p class="titleJoinBar"><b>Join a new class</b></p>
+            <p>
+                Enter class code:
+                <input type="text" name="classCode" id="enterNewClass">
+            </p>
+            <p class="requestMessage" id="requestMessage"></p>
+    </div>
+
+    <div class="underTopnav">
+    </div>
+
+    <div class="classes" id="myClasses">
+
+    </div>
+    <div class="endOfPage"></div>
+
+    <script src="../js/functions.js"></script>
+    <script type="module" src="../../common/js/homePage.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/enterNewClass.js"></script>
+</body>
+
+</html>

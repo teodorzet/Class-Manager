@@ -1,0 +1,116 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <link rel="stylesheet" href="../css/profClass.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+</head>
+
+<body>
+
+    <div class="topnav" id="myTopnav">
+        <a href="profHomePage.html" class="active">My Classes</a>
+        <a href="settingsAccount.html">Settings</a>
+        <a id="logoutButton">Logout</a>
+
+        <a href="javascript:void(0);" class="icon" onclick="myFunction()">
+            <i class="fa fa-bars"></i>
+        </a>
+        <img class="logo" alt="logo of the site" src="../others/922020e567654f5aa59ea53b7b16826b-removebg-preview.png"
+            width="130" height="65">
+
+    </div>
+
+    <div class="header" id="myHeader"> <b id="courseTitle"></b> </div>
+
+
+    <div class="generalInfo" id="general">
+
+        <p class="predefined"><b>Your class informations</b></p>
+        <p class="predefined">Your site: <span class="customInfo" id="teacherSite"></span></p>
+
+        <p class="predefined">Other platforms: <span class="customInfo" id="platforms"></span></p>
+
+        <p class="predefined">Schedule: <span class="customInfo" id="schedule"> </span></p>
+
+        <p class="predefined">Class ID: <span class="customInfo" id="classId"> </span></p>
+        <p class="predefined">Presence code: <span class="customInfo" id="code"> </span></p>
+
+    </div>
+
+
+    <div class="classToolBar" id="classToolBar">
+
+        <form action="classCatalog.html">
+            <button type="submit" class="classButton">
+                Catalog
+            </button>
+        </form>
+
+        <form action="classRequests.html">
+            <button type="submit" class="classButton">
+                Requests
+            </button>
+        </form>
+
+        <form action="addAssignment.html">
+            <button type="submit" class="classButton">
+                Assignment
+            </button>
+        </form>
+
+        <form id="startClass">
+            <button type="submit" class="classButton">
+                Start Class
+            </button>
+        </form>
+
+        <form action="classEdit.html">
+            <button type="submit" class="classButton">
+                Edit Class
+            </button>
+        </form>
+
+    </div>
+
+    <div class="newsForm">
+        <div class="addNews">
+            <p id="requestMessage"></p>
+            <form method="POST" id="newsForm">
+                <textarea class="newsTitle" id="newsTitle" name="newsTitle" rows="1" cols="30"
+                    placeholder="Enter your news title..."></textarea>
+
+                <textarea class="newsBodyInput" id="newsBodyInput" name="newsBodyInput" rows="8" cols="60"
+                    placeholder="Enter your news description..."></textarea>
+                <br>
+                <br>
+                <label for="files">Upload your files:</label>
+                <input type="file" id="fileInput" name="files" multiple>
+                <button type="submit" class="submitNewsButton">
+                    Submit news
+                </button>
+
+            </form>
+
+        </div>
+
+    </div>
+
+    <div class="news" id="newPost"> </div>
+
+    <div class="assignments" id="myAssignments">
+
+    </div>
+
+    <script src="../js/functions.js"></script>
+    <script src="../../common/js/profCourse.js"></script>
+    <script src="../../common/js/logout.js"></script>
+    <script src="../../common/js/news.js"></script>
+    <script src="../../common/js/createNews.js"></script>
+    <script src="../../common/js/profAssignments.js"></script>
+</body>
+
+</html>

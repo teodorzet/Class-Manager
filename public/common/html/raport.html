@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+
+<html lang="ro">
+
+<head>
+    <title>Class Manager</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <link rel="stylesheet" href="../css/userguide.css">
+</head>
+
+<body>
+    <header>
+        <b>ClaMA Class Manager</b>
+    </header>
+
+
+    <section typeof="sa:AuthorsList">
+        <h1>Authors</h1>
+        <ul>
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person" resource="">
+                    <meta property="schema:givenName" content="Gabriela">
+                    <meta property="schema:familyName" content="Ursachi">
+                    <span property="schema:name">Ursachi Gabriela</span>
+
+                </span>
+
+                <ul>
+                    <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                        <a href="mailto:gabriela.ursachi@info.uaic.ro"
+                            property="schema:email">gabriela.ursachi@info.uaic.ro</a>
+                    </li>
+
+                </ul>
+
+
+            <li typeof="sa:ContributorRole" property="schema:author">
+                <span typeof="schema:Person" resource="">
+                    <meta property="schema:givenName" content="Teodor">
+                    <meta property="schema:familyName" content="Zet">
+                    <span property="schema:name">Zet Teodor</span>
+
+                </span>
+
+                <ul>
+                    <li property="schema:roleContactPoint" typeof="schema:ContactPoint">
+                        <a href="mailto:teodor.zet@info.uaic.ro" property="schema:email">teodor.zet@info.uaic.ro</a>
+                    </li>
+
+                </ul>
+
+        </ul>
+
+        <div role="contentinfo">
+
+            <h4>Repository proiect</h4>
+            <a href="https://github.com/gabrielaursachi/Tehnologii-Web-ClaMa">Git-hub ClaMA</a>
+
+        </div>
+
+    </section>
+
+
+    <section id="introducere" role="doc-introduction">
+        <h1>Introducere</h1>
+        <p>
+            Acest document are ca scop detalierea solutiei web Class Manager. Urmatoarele sectiuni prezinta o discutie
+            vizand utilizarea si functionalitatile proiectului si clasele de utilizatori caruia se adreseaza: studenti
+            si profesori.
+        </p>
+        <p>
+            Aplicatia se adreseaza in mod special profesorilor, respectiv studentilor ce urmeaza cursurile acestora.
+            Scopul acestei lucrari este cel de a realiza o solutie web pentru a gestiona cu usurinta activitatea
+            didactica a unei/unor grupe de studenti in mediul
+            online.
+        </p>
+    </section>
+
+    <section id="descriereGenerala" property="schema:description">
+        <h1>Descriere Generala</h1>
+        <h2>Perspectiva produsului</h2>
+        <p>
+            Class Manager este un produs web realizat pentru utilizarea in cadrul unui context academic, reprezentand o
+            componenta de gestionare a studentilor, respectiv a activitatii acestora.
+        </p>
+        <h2>Functionalitati</h2>
+        <p>
+            Utilitarul realizat reprezinta functionalitati diferite in functie de rolul utilizatorului in cadrul
+            platformei existand astfel doua clase de utilizator care beneficiaza de serviciile aplicatiei, in urma unui
+            proces de autentificare/inregistrare : studentii
+            si profesorii.
+        </p>
+        <h3>Studentul</h3>
+        <p>
+            Utilizatorul care functioneaza din perspectiva studentului are posibilitatea de:
+        </p>
+        <ul>
+            <li>a se alatura unei grupe</li>
+            <li>a indeplini sarcini atribuite de catre profesor pentru a fi notat</li>
+            <li>a isi consulta notele dobandite</li>
+            <li>a isi marca prezenta la orele pe care le urmeaza</li>
+        </ul>
+        <h3>Profesorul</h3>
+        <p>
+            Utilizatorul care functioneaza din perspectiva profesorului are posibilitatea de:
+        </p>
+        <ul>
+            <li>a accepta sau nu studenti in grupa dedicata cursului</li>
+            <li>a pune note studentilor</li>
+            <li>a alege o formula matematica pe care se bazeaza nota finala a studentilor</li>
+            <li>a exporta catalogul</li>
+        </ul>
+        <h2>Tehnologii utilizate</h2>
+        <p>
+            Interfata a fost realizata cu ajutorul HTML5 si CSS3, respectiv javascript pentru meniul de navigatie, fiind
+            construita intr-o maniera responsive pentru a permite utlizarea aplicatiei pe orice dispozitiv indiferent de
+            marimea ecranului.
+        </p>
+    </section>
+    <section id="interfataUtilizatorului" property="schema:description">
+        <h1>Interfata utilizatorului</h1>
+        <p>In vederea realizarii interfetei unui site cu scop didactic a fost aleasa cu predominanta culoarea albastru.
+            Unele cercetari sugereaza ca persoanele care depun un efort intelectual solicitant sunt mult mai productive
+            intr-un ”mediu albastru”,
+            fiind astfel o alegere potrivita pentru situatii de invatare ce pot fi considerate mai mult sau mai putin
+            istovitoare.
+        </p>
+        <p>Bara de navigatie este un element general ce se regaseste in ambele cazuri de utilizatori in cadrul careia se
+            afla:</p>
+        <ul>
+            <li>”My classes”, pagina claselor la care participa/pe care le detine utilizatorul in functie de caz</li>
+            <li>”Settings”, pagina cu informatiile contului ce permite totodata acualizarea acestora
+            </li>
+            <li>”Logout”, un buton ce permite parasirea platformei si redirectionarea catre pagina de autentificare</li>
+        </ul>
+        <h2>Interfata studentului</h2>
+        <ul>
+            <li>”My classes”, pagina claselor la care participa studentul
+                <p> In cadrul acesteia un student poate: </p>
+                <ul>
+                    <li>sa se inscrie la o noua clasa</li>
+                    <li>sa acceseze cursurile la care s-a inscris</li>
+                </ul>
+                Odata ce este accesata, studentul poate vizualiza detalii generale privind clasa (precum profesorul,
+                pagina cursului, link-uri catre alte platforme dedicate, orar, note care i-au fost atribuite) si un
+                istoric al cerintelor profesorului dar si al noutatilor
+                cu privire la materia in discutie.
+            </li>
+            <li>”Assignments”, pagina task-urilor materiilor studentului
+
+                <p>In cadrul acesteia un student poate vizualiza task-urile atribuite de catre profesori la toate
+                    materiile pe care le urmeaza. Acestea pot fi filtrate in functie de statusul predarii. Odata ce un
+                    student acceseaza un task, acesta este redirectionat
+                    catre o pagina ce contine detalii cu privire la data predarii sau alte specificatii in legatura cu
+                    cerintele pe care trebuie sa le indeplineasca. In cadrul acestei pagini acesta isi poate propune si
+                    rezolvarea catre profesor.</p>
+            </li>
+        </ul>
+        <h2>Interfata profesorului</h2>
+        <p>
+            ”My classes”, pagina claselor pe care le sustine profesorul
+        <p> In cadrul acesteia un profesor poate: </p>
+        <ul>
+            <li>sa creeze o clasa noua</li>
+            <li>sa acceseze clasele pe care le coordoneaza</li>
+        </ul>
+
+        <p>
+            Odata ce este accesata, profesorul poate vizualiza detalii generale privind clasa un istoric al cerintelor
+            sale destinate studentior ce urmeaza materia in discutie. Cand este accesat un curs, profesorul este
+            redirectionat catre o noua pagina in cadrul
+            careia dispune de o zona in care poate accesa catalogul ce include toti studentii sai, cererile de inscriere
+            catre cursul sau si optiunea de editare a informatiilor generale cu privire la cursul aferent.
+        </p>
+
+        <p>
+            In ambele cazuri interfata a fost gandita intr-un mod minimalist care sa permita usurinta utilizarii
+            produsului si sa incurajeze astfel activitatea didactica fara a distrage studentii in special, de la scopul
+            principal al utilizarii site-ului. Pentru
+            a creea totusi un aspect cat mai prietenos, in ceea ce priveste stilizarea paginilor au fost utilizate
+            ilustratii open-source (svg-uri) din cadrul platformei unDraw si platforma freelogodesign pentru realizarea
+            logo-ului site-ului.
+        </p>
+    </section>
+    <section id="caracteristiciAleAplicatiei" property="schema:description">
+        <h1>Caracteristici ale aplicatiei</h1>
+        <h2>Autentificarea/Inregsitrarea</h2>
+        <p>
+            Un utilizator nu poate benefica de functionalitatile oferite de aplicatia web decat daca acesta isi creeaza
+            un cont pe care il foloseste ulterior pentru autentificare. Inregistrarea consta in completarea unui
+            formular cu datele personale, nume, prenume
+            si mail care va fi unic pentru fiecare utilizator. De asemenea se specifica si postura din care se creeaza
+            contul: student sau profesor.
+        </p>
+        <h2>Student</h2>
+        <h3>Inscrierea la curs</h3>
+        <p>
+            Un student se poate inscrie la un nou curs pe baza unui cod unic ce poate fi introdus in pagina ”My
+            classes”. Acest curs apare ulterior in aceeasi pagina, odata ce cererea i-a fost acceptata de catre
+            profesorul coordonator.
+        </p>
+        <h3>Participarea la ora</h3>
+        <p>
+            Un student isi poate marca prezenta la ora prin introducerea unui cod in pagina destinata cursului, cod
+            valabil o periodata prestabilita de timp(ex: 10 minute)
+        </p>
+        <h3>Predarea temelor</h3>
+        <p>
+            Fiecare cerinta/tema a unui profesor se poate regasi fie in pagina destinata cursului fie in pagina
+            ”Assignments”. Prin accesarea unei astfel de teme studentul se poate informa asupra specificatiilor impuse
+            si isi poate preda tema in sectiunea corespunzatoare.
+            Utilizatorul poate incarca documente, respectiv text cu privire la munca sa, pe care le poate preda cu
+            ajutorul unui buton de submit.
+        </p>
+        <h2>Profesor</h2>
+        <h3>Crearea unui curs</h3>
+        <p>
+            Profesorul isi poate creea un nou spatiu in cadrul paginii ”My classes” prin intermediul butonului ”create
+            new class” ce redirectioneaza catre un formular. In urma completarii cu datele necesare referitoare la
+            clasa(denumire, program, componente, formula
+            notei finale, legaturi externe cu alte platforme) este creat un nou spatiu de lucru care apare ultrior in
+            pagina precedenta.
+        </p>
+        <h3>Gestionarea cursului</h3>
+        <p>
+            In pagina destinata cursului, profesorul dispune de o zona in care se regasesc butoane pentru
+            redirectionarea catre: catalog, cererile de inscriere, crearea unei teme noi, editarea informatiilor si de
+            asemenea o zona de introducere text pentru noutati
+            destinate studentilor cu scop informativ.
+        </p>
+        <h3>Notarea</h3>
+        <p>
+            Notarea studentilor se realizeaza pe baza catalogului unde se regasesc toti participantii cu notele
+            atribuite plus prezentele. Profesorul are posibilitatea de a exporta catalogul in format CSV, HTML sau PDF
+            dupa preferinta.
+        </p>
+        <h3>Cereri inscriere</h3>
+        <p>
+            Studentii creeaza cereri catre cursurile la care doresc sa se inscrie prin intermediul codului unic.
+            Profesorul gestioneaza aceste cereri prin intermediul paginii destinate cursului avand posibilitatea de a
+            accepta/refuza participanti.
+        </p>
+        <h3>Crearea temelor</h3>
+        <p>
+            Profesorul poate creea noi cerinte de indeplinit catre studenti prin completarea unui formular in care ofera
+            informatii precum denumirea si descrierea task-ului, data si ora predarii.
+        </p>
+    </section>
+
+
+
+    <section role="doc-bibliography" id="bibliografie">
+        <h1>
+            Bibliografie
+        </h1>
+
+        <h4> Site-ul materiei Tehnologii Web</h4>
+        <span property="schema:notation" typeof="schema:WebPage"
+            resource="https://profs.info.uaic.ro/~busaco/teach/courses/web/">
+            <cite property="schema:name">
+                <a href="https://profs.info.uaic.ro/~busaco/teach/courses/web/"> Tehnologii Web</a>
+            </cite>
+
+        </span>
+
+        <h4> Tutoriale</h4>
+        <span property="schema:notation" typeof="schema:WebPage" resource="https://www.w3schools.com">
+            <cite property="schema:name">
+
+
+                <a href="https://www.w3schools.com/html"> Tutoriale HTML5</a>
+            </cite>
+
+            <cite property="schema:name">
+                <a href="https://www.w3schools.com/css">Tutoriale CSS3</a>
+
+
+
+            </cite>
+
+        </span>
+
+        <h4> Resurse si ilustratii</h4>
+        <span property="schema:notation" typeof="schema:WebPage" resource="https://www.w3schools.com">
+            <cite property="schema:name">
+
+                <a href="https://www.freelogodesign.org/"> Free Logo Design</a>
+            </cite>
+
+            <cite>
+                <a href="https://undraw.co/">unDraw</a>
+
+            </cite>
+
+        </span>
+
+    </section>
+
+</body>
+
+</html>
