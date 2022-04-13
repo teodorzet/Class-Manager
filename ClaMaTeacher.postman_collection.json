@@ -1,0 +1,283 @@
+{
+	"info": {
+		"_postman_id": "cfc4ec56-b9d0-4b72-aaf5-37cac04d07cc",
+		"name": "ClaMaTeacher",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "saveCatalog",
+			"request": {
+				"method": "PUT",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "[\r\n  { \"id\": 77, \"c1\": 2, \"c2\": 2, \"bonus\": 0.8 },\r\n  { \"id\": 66, \"c1\": 7, \"c2\": 7, \"bonus\": 0.5 },\r\n  { \"id\": 71, \"c1\": 5, \"c2\": 10 }\r\n]",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/catalog/save?class=1",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"catalog",
+						"save"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "1"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "auth",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"username\": \"varlan\",\r\n    \"password\": \"varlan\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/auth",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"auth"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "calculateFinalGrade",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"id_class\": 1,\r\n  \"id_student\": 66,\r\n  \"presences\": 1,\r\n  \"c1\": 7,\r\n  \"c2\": 7,\r\n  \"c3\": null,\r\n  \"c4\": null,\r\n  \"c5\": null,\r\n  \"bonus\": 0.5,\r\n  \"name\": \"Ursachi\",\r\n  \"surname\": \"Georgiana\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/catalog/calculateFinalGrade",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"catalog",
+						"calculateFinalGrade"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "courseRequests",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8888/api/requests?class=16",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"requests"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "processRequest",
+			"request": {
+				"method": "DELETE",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n  \"answer\": false,\r\n  \"idStudent\": 79,\r\n  \"idRequest\": 13\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/request?class=16",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"request"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "16"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getCourseInfo",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8888/api/course/load?class=2",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"course",
+						"load"
+					],
+					"query": [
+						{
+							"key": "class",
+							"value": "2"
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "updateClass",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\r\n    \"classId\": 1,\r\n    \"className\": \"Tehnologii Web\",\r\n    \"classDate\": \"Monday\",\r\n    \"classHourStart\": \"10:00:00\",\r\n    \"classHourEnd\": \"12:00:00\",\r\n    \"classLink\": \"https://profs.info.uaic.ro/~busaco/teach/courses/web/\",\r\n    \"classComponents\": 2,\r\n    \"classFormula\": \"(a+b)/2\",\r\n    \"classOtherPlatforms\": \"discord\"\r\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "localhost:8888/api/update/class",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"update",
+						"class"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "getAssignmentsFromAssignment",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "Cookie",
+						"value": "myCookie=eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NzMsInVzZXJUeXBlIjoicHJvZmVzb3IiLCJpYXQiOjE2MjI5ODIzNzksImV4cCI6MTYyMzA2ODc3OX0.8Vbx1N4NEhFtylUEybF91-oWHscbFV2OTaXAUBgXG8o; HttpOnly; Secure; expires =Mon Jun 07 2021 15:26:19 GMT+0300 (Eastern European Summer Time); Max-Age=; Domain=localhost; Path=/; overwrite=true",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "localhost:8888/api/assignment/assignments?assignment=45",
+					"host": [
+						"localhost"
+					],
+					"port": "8888",
+					"path": [
+						"api",
+						"assignment",
+						"assignments"
+					],
+					"query": [
+						{
+							"key": "assignment",
+							"value": "45"
+						}
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
